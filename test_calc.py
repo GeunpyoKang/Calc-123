@@ -14,14 +14,12 @@ class TestCalc(TestCase):
 
     def test_get_sum_sum(self):
         self.assertEqual(self.sut.get_sum_sum(1, 2, 3), 6)
-        
+
     def test_gop(self):
-        calc = Calc()
-        self.assertEqual(calc.getGop(2, 3), 6)
+        self.assertEqual(self.sut.getGop(2, 3), 6)
 
     def test_getDivide(self):
-        calc = Calc()
-        self.assertEqual(calc.getDivide(6, 2), 3)
+        self.assertEqual(self.sut.getDivide(6, 2), 3)
 
     def test_getDivide_zeroDivision(self):
         calc = Calc()
@@ -35,3 +33,10 @@ class TestCalc(TestCase):
         self.assertEqual(ret, 9)
         ret = calc.getZegop(12)
         self.assertEqual(ret, 144)
+        def test_invalid_params_in_get_minus(self):
+        with self.assertRaises(AttributeError):
+            self.sut.get_minus('a', 'b')
+
+    def test_get_minus(self):
+        self.assertEqual(self.sut.get_minus(5, 2), 3)
+

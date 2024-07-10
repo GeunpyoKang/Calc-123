@@ -14,5 +14,11 @@ class Calc:
         except ZeroDivisionError:
             return "ZeroDivisionError"
 
+    def get_minus(self, a, b):
+        if type(a) is not int or type(b) is not int:
+            raise AttributeError
+        return a - b
+
     def getZegop(self, num):
         return num * num
+
