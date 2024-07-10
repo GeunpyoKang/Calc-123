@@ -23,5 +23,9 @@ class TestCalc(TestCase):
     def test_getDivide_zeroDivision(self):
         self.assertEqual(self.sut.getDivide(6, 0), "ZeroDivisionError")
 
+    def test_invalid_params_in_get_minus(self):
+        with self.assertRaises(AttributeError):
+            self.sut.get_minus('a', 'b')
+
     def test_get_minus(self):
-        pass
+        self.assertEqual(self.sut.get_minus(5, 2), 3)

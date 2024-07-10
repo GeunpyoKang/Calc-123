@@ -13,5 +13,5 @@ class Calc:
         except ZeroDivisionError:
             return "ZeroDivisionError"
 
-    def getMinus(self):
+    def get_minus(self, a, b):
         pass
