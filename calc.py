@@ -14,4 +14,6 @@ class Calc:
             return "ZeroDivisionError"
 
     def get_minus(self, a, b):
-        pass
+        if type(a) is not int or type(b) is not int:
+            raise AttributeError
+        return a - b
