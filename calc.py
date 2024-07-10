@@ -1,7 +1,7 @@
 class Calc:
 
-    def getGop(self, a, b):
-        return a * b
+    def getGop(self, num_1, num_2):
+        return num_1 * num_2
 
-    def getZegop(self, a):
-        return a * a
+    def getZegop(self, num):
+        return num * num
