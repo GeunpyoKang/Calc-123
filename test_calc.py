@@ -4,6 +4,7 @@ from calc import Calc
 
 
 class TestCalc(TestCase):
+
     def setUp(self):
         self.sut = Calc()
 
@@ -25,3 +26,12 @@ class TestCalc(TestCase):
     def test_getDivide_zeroDivision(self):
         calc = Calc()
         self.assertEqual(calc.getDivide(6, 0), "ZeroDivisionError")
+        
+    def test_zegop_case(self):
+        calc = Calc()
+        ret = calc.getZegop(2)
+        self.assertEqual(ret, 4)
+        ret = calc.getZegop(3)
+        self.assertEqual(ret, 9)
+        ret = calc.getZegop(12)
+        self.assertEqual(ret, 144)
