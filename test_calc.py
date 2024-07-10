@@ -4,6 +4,7 @@ from calc import Calc
 
 
 class TestCalc(TestCase):
+
     def setUp(self):
         self.sut = Calc()
 
@@ -21,11 +22,21 @@ class TestCalc(TestCase):
         self.assertEqual(self.sut.getDivide(6, 2), 3)
 
     def test_getDivide_zeroDivision(self):
-        self.assertEqual(self.sut.getDivide(6, 0), "ZeroDivisionError")
-
-    def test_invalid_params_in_get_minus(self):
+        calc = Calc()
+        self.assertEqual(calc.getDivide(6, 0), "ZeroDivisionError")
+        
+    def test_zegop_case(self):
+        calc = Calc()
+        ret = calc.getZegop(2)
+        self.assertEqual(ret, 4)
+        ret = calc.getZegop(3)
+        self.assertEqual(ret, 9)
+        ret = calc.getZegop(12)
+        self.assertEqual(ret, 144)
+        def test_invalid_params_in_get_minus(self):
         with self.assertRaises(AttributeError):
             self.sut.get_minus('a', 'b')
 
     def test_get_minus(self):
         self.assertEqual(self.sut.get_minus(5, 2), 3)
+
