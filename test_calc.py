@@ -13,15 +13,15 @@ class TestCalc(TestCase):
 
     def test_get_sum_sum(self):
         self.assertEqual(self.sut.get_sum_sum(1, 2, 3), 6)
-        
+
     def test_gop(self):
-        calc = Calc()
-        self.assertEqual(calc.getGop(2, 3), 6)
+        self.assertEqual(self.sut.getGop(2, 3), 6)
 
     def test_getDivide(self):
-        calc = Calc()
-        self.assertEqual(calc.getDivide(6, 2), 3)
+        self.assertEqual(self.sut.getDivide(6, 2), 3)
 
     def test_getDivide_zeroDivision(self):
-        calc = Calc()
-        self.assertEqual(calc.getDivide(6, 0), "ZeroDivisionError")
+        self.assertEqual(self.sut.getDivide(6, 0), "ZeroDivisionError")
+
+    def test_get_minus(self):
+        pass
